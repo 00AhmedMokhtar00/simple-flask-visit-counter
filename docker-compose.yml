@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: ./flask
+    ports:
+      - "5001:5000"
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:alpine"
